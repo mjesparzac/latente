@@ -16,6 +16,7 @@
   --accent: #b06a4a;
   --soft: #7c7c7c;
   --light: #ffffff;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /* RESET */
@@ -95,19 +96,14 @@ p {
 /* HERO */
 .hero {
   height: 100vh;
-  background-image: url("images/fondo.png");
+  background: linear-gradient(rgba(10,25,47,0.6), rgba(10,25,47,0.4)), url("images/fondo.png");
   background-size: cover;
   background-position: center;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
+  text-align: center;
+  color: var(--light);
 }
 
 .hero-content {
@@ -118,18 +114,44 @@ p {
   max-width: 700px;
 }
 
-.hero-content span {
-  letter-spacing: 4px;
+.hero-content span { 
+  letter-spacing: 6px; 
+  text-transform: uppercase; 
+  font-size: 0.9rem; 
+  color: var(--accent); 
+  display: block;
+  margin-bottom: 15px;
+}
+.hero-content p { color: #f0f0f0; margin: 30px auto; font-size: 1.2rem; font-weight: 300; }
+
+.btn-main {
+  padding: 15px 40px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 2px;
+  font-size: 13px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: 0.8rem;
-  color: var(--accent);
+  transition: var(--transition);
+  display: inline-block;
+  margin: 10px;
 }
 
-.hero-content p {
-  margin-top: 24px;
-  font-size: 1.05rem;
-  color: #ddd;
+.btn-outline {
+  padding: 15px 40px;
+  border: 1px solid var(--light);
+  color: var(--light);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: var(--transition);
+  display: inline-block;
+  margin: 10px;
 }
+
+.btn-main:hover { background: #ab8b4b; transform: translateY(-3px); }
 
 /* PROJECT */
 .project-section {
@@ -361,14 +383,13 @@ footer {
 
   <!-- HERO -->
   <section class="hero">
-    <div class="overlay"></div>
-
     <div class="hero-content">
-      <div class="hero-text">
-        <span>Dúo musical</span>
-        <h1>LATENTE</h1>
-        <p>Música con luz y propósito.  
-        Ritmo y melodía entrelazados en una propuesta artística honesta y contemporánea.</p>
+      <span>Dúo Musical · Medellín</span>
+      <h1>LATENTE</h1>
+      <p>Música con luz y propósito. La precisión de la ingeniería y la sensibilidad del alma latina se encuentran en un escenario.</p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn-main">Contrataciones</a>
+        <a href="#" class="btn-outline">Descargar Dossier</a>
       </div>
     </div>
   </section>
