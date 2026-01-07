@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>LATENTE | Mónica & Kelly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --dark: #1c1c1c;
+      --accent: #b06a4a;
+      --soft: #8a8a8a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 100px 10%;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 600px;
+      font-size: 1rem;
+      color: var(--soft);
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      gap: 40px;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero span {
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .hero img {
+      max-width: 480px;
+      border-radius: 6px;
+    }
+
+    /* CONCEPTO */
+    .concept {
+      background: white;
+    }
+
+    /* SHOW */
+    .show {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 6px;
+    }
+
+    /* IMAGEN */
+    .image-full img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    /* CONTACTO */
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background: var(--accent);
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 0.8rem;
+      color: var(--soft);
+    }
+
+    @media(max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .artists-section {
+  padding: 6rem 1.5rem;
+  background-color: #f6f3ee;
+  font-family: 'Inter', sans-serif;
+  color: #111;
+}
+
+.artists-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 5rem;
+  font-weight: 600;
+}
+
+.artist-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.artist-row.reverse {
+  direction: rtl;
+}
+
+.artist-row.reverse .artist-text {
+  direction: ltr;
+}
+
+.artist-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.artist-text h3 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.artist-text span {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7a4a32;
+  margin-bottom: 1.4rem;
+}
+
+.artist-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  max-width: 480px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .artist-row {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-row.reverse {
+    direction: ltr;
+  }
+}
+
+
+.project-section {
+  padding: 6rem 1.5rem;
+  background-color: #111; /* fondo oscuro elegante */
+  color: #f6f3ee;
+  font-family: 'Inter', sans-serif;
+}
+
+.project-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-title {
+  font-size: 2.6rem;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.project-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #e6e2dc;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <span>Dúo musical</span>
+      <h1>LATENTE</h1>
+      <p>Música con luz y propósito.  
+      Ritmo y melodía entrelazados en una propuesta artística honesta y contemporánea.</p>
+    </div>
+
+    <img src="Hermanas.png" alt="LATENTE Mónica y Kelly">
+  </section>
+
+  <!-- CONCEPTO -->
+  <section class="project-section">
+  <div class="project-container">
+
+    <h2 class="project-title">El proyecto</h2>
+
+    <div class="project-text">
+      <p>
+        Nacidas entre melodías y sueños compartidos, <strong>Kelly y Mónica Esparza</strong>
+        son dos hermanas que descubrieron en la música el lenguaje perfecto para expresar
+        su esencia. Su vínculo trasciende la sangre: es la unión de dos almas consagradas al
+        arte de transformar la vida en sonido, donde cada nota refleja una historia, una
+        emoción y una búsqueda interior.
+      </p>
+
+      <p>
+        Su propuesta sonora es un viaje sin fronteras, un recorrido por diversos paisajes
+        musicales en el que cada canción se convierte en la exploración de un nuevo mundo.
+        En su música confluyen lo ancestral y lo contemporáneo, la raíz y la innovación,
+        nuestra cultura y la magia de lo desconocido.
+      </p>
+
+      <p>
+        Con un mensaje honesto y poderoso, abordan temas como el amor, el empoderamiento,
+        la superación y la conciencia social, invitando al público a vivir la música como una
+        experiencia transformadora.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+  <section class="artists-section">
+  <div class="artists-container">
+
+    <h2 class="section-title">Las artistas</h2>
+
+    <!-- Kelly -->
+    <div class="artist-row">
+      <div class="artist-photo">
+        <img src="KellyEsparza.jpg" alt="Kelly Esparza">
+      </div>
+
+      <div class="artist-text">
+        <h3>Kelly Esparza</h3>
+        <span>Voz & Piano</span>
+
+        <p>
+          Cantante, pianista y compositora. Tecnóloga en Música con énfasis en canto
+          del Tecnológico de Artes Débora Arango y estudiante de Canto Popular en la
+          Universidad de Antioquia.
+        </p>
+
+        <p>
+          Con más de <strong>13 años de trayectoria artística</strong>, ha desarrollado un
+          estilo sensible y versátil, influenciado por el pop, la balada y la música del mundo.
+          Su interpretación se caracteriza por la emoción, la técnica vocal y la conexión
+          genuina con el público.
+        </p>
+      </div>
+    </div>
+
+    <!-- Moni -->
+    <div class="artist-row reverse">
+      <div class="artist-photo">
+        <img src="MoniEsparza.png" alt="Moni Esparza">
+      </div>
+
+      <div class="artist-text">
+        <h3>Moni Esparza</h3>
+        <span>Percusión · Coros · Producción</span>
+
+        <p>
+          Tecnóloga en Música con énfasis en batería del Tecnológico de Artes Débora Arango
+          e Ingeniera de Sistemas e Informática de la Universidad Nacional de Colombia.
+        </p>
+
+        <p>
+          Su enfoque une la precisión rítmica con la exploración sonora. Amante de los ritmos
+          latinos —cumbia, salsa y merengue—, combina la percusión tradicional con la
+          producción musical contemporánea. También se encarga de la grabación, edición
+          audiovisual y el componente técnico del proyecto.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- MUSICA / VIDEO -->
+  <section>
+    <h2>Música</h2>
+    <p>Una propuesta sonora que transita entre lo íntimo y lo poderoso.</p>
+    <br/>
+    <!-- Aquí puedes incrustar YouTube o Spotify -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qaKjnZoreRY?si=furCPxxnCpeYgifQ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </section>
+
+  <!-- SHOW -->
+  <section>
+    <h2>Show en vivo</h2>
+    <div class="show">
+      <div class="card">
+        <h3>Formato dúo</h3>
+        <p>Voz, piano, percusión y batería.
+        Un show íntimo y poderoso, adaptable a teatros, festivales y espacios culturales.</p>
+      </div>
+      <div class="card">
+        <h3>Duración</h3>
+        <p>60 – 75 minutos.  
+        Repertorio original + versiones reinterpretadas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGEN -->
+  <section class="image-full">
+    <img src="foto-secundaria.jpg" alt="LATENTE sesión artística">
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact">
+    <h2>Contacto</h2>
+    <p>Para conciertos, festivales y colaboraciones.</p>
+    <a href="mailto:latente.music@gmail.com">Escríbenos</a>
+  </section>
+
+  <footer>
+    © LATENTE · Mónica & Kelly
+  </footer>
+
+</body>
+</html>
