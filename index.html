@@ -10,156 +10,152 @@
 
   <style>
     :root {
-      --bg: #f6f4ef;
-      --dark: #1c1c1c;
-      --accent: #b06a4a;
-      --soft: #8a8a8a;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-
-    section {
-      padding: 100px 10%;
-    }
-
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-    }
-
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-    }
-
-    p {
-      max-width: 600px;
-      font-size: 1rem;
-      color: var(--soft);
-    }
-
-    /* HERO */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 100vh;
-      gap: 40px;
-    }
-
-    .hero-text {
-      max-width: 500px;
-    }
-
-    .hero span {
-      color: var(--accent);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-    }
-
-    .hero img {
-      max-width: 480px;
-      border-radius: 6px;
-    }
-
-    /* CONCEPTO */
-    .concept {
-      background: white;
-    }
-
-    /* SHOW */
-    .show {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-    }
-
-    .card {
-      background: white;
-      padding: 40px;
-      border-radius: 6px;
-    }
-
-    /* IMAGEN */
-    .image-full img {
-      width: 100%;
-      border-radius: 6px;
-    }
-
-    /* CONTACTO */
-    .contact {
-      text-align: center;
-    }
-
-    .contact a {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      color: white;
-      background: var(--accent);
-      padding: 14px 30px;
-      border-radius: 30px;
-      font-weight: 500;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px;
-      font-size: 0.8rem;
-      color: var(--soft);
-    }
-
-    @media(max-width: 768px) {
-      h1 {
-        font-size: 3rem;
-      }
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    .artists-section {
-  padding: 6rem 1.5rem;
-  background-color: #f6f3ee;
-  font-family: 'Inter', sans-serif;
-  color: #111;
+  --bg: #f6f4ef;
+  --dark: #121212;
+  --accent: #b06a4a;
+  --soft: #7c7c7c;
+  --light: #ffffff;
 }
 
-.artists-container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+section {
+  padding: 100px 8%;
+}
+
+/* TITULOS */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  letter-spacing: 6px;
+}
+
+h2 {
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--soft);
+  max-width: 700px;
+}
+
+/* NAV */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 3px;
+  font-size: 20px;
+  color: var(--light);
+}
+
+.nav nav a {
+  margin-left: 28px;
+  text-decoration: none;
+  color: #eee;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.nav nav a:hover {
+  opacity: 0.6;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background-image: url("images/fondo.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--light);
+  max-width: 700px;
+}
+
+.hero-content span {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.hero-content p {
+  margin-top: 24px;
+  font-size: 1.05rem;
+  color: #ddd;
+}
+
+/* PROJECT */
+.project-section {
+  background: #111;
+  color: #f6f3ee;
+}
+
+.project-text p {
+  color: #e2ded6;
+}
+
+/* ARTISTS */
+.artists-section {
+  background: var(--bg);
 }
 
 .section-title {
   text-align: center;
-  font-size: 2.8rem;
-  margin-bottom: 5rem;
-  font-weight: 600;
+  margin-bottom: 80px;
 }
 
 .artist-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 80px;
   align-items: center;
-  margin-bottom: 6rem;
+  margin-bottom: 120px;
 }
 
 .artist-row.reverse {
@@ -175,85 +171,96 @@
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 14px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.artist-text h3 {
-  font-size: 2rem;
-  margin-bottom: 0.3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
 }
 
 .artist-text span {
   display: block;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #7a4a32;
-  margin-bottom: 1.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 20px;
 }
 
-.artist-text p {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  max-width: 480px;
+/* SHOW */
+.show {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
 }
 
-/* Responsive */
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  margin-top: 30px;
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 14px 34px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--soft);
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
+  section {
+    padding: 80px 6%;
+  }
+
   .artist-row {
     grid-template-columns: 1fr;
   }
 
-  .artist-row.reverse {
-    direction: ltr;
+  .nav nav {
+    display: none; /* luego podemos hacer menú móvil */
   }
 }
-
-
-.project-section {
-  padding: 6rem 1.5rem;
-  background-color: #111; /* fondo oscuro elegante */
-  color: #f6f3ee;
-  font-family: 'Inter', sans-serif;
-}
-
-.project-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.project-title {
-  font-size: 2.6rem;
-  margin-bottom: 2.5rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.project-text p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  color: #e6e2dc;
-}
-
-
 
   </style>
 </head>
 
 <body>
 
+  <header class="nav">
+    <div class="logo">LATENTE</div>
+    <nav>
+      <a href="#proyecto">Proyecto</a>
+      <a href="#musica">Música</a>
+      <a href="#galeria">Galería</a>
+      <a href="#videos">Videos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-text">
-      <span>Dúo musical</span>
-      <h1>LATENTE</h1>
-      <p>Música con luz y propósito.  
-      Ritmo y melodía entrelazados en una propuesta artística honesta y contemporánea.</p>
-    </div>
+    <div class="overlay"></div>
 
-    <img src="images/Hermanas.png" alt="LATENTE Mónica y Kelly">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span>Dúo musical</span>
+        <h1>LATENTE</h1>
+        <p>Música con luz y propósito.  
+        Ritmo y melodía entrelazados en una propuesta artística honesta y contemporánea.</p>
+      </div>
+    </div>
   </section>
 
   <!-- CONCEPTO -->
