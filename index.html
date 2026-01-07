@@ -168,7 +168,8 @@ p {
 }
 
 .artist-photo img {
-  width: 70vh;
+  width: 100%;
+  max-width: 420px;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 14px;
@@ -219,6 +220,31 @@ footer {
   color: var(--soft);
 }
 
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  padding-top: 56.25%; /* 16:9 */
+  margin-top: 40px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   section {
@@ -229,19 +255,82 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .nav nav {
-    display: none; /* luego podemos hacer menú móvil */
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  .nav-menu a {
+    padding: 14px 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    letter-spacing: 3px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 70px 6%;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .artist-row {
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+
+  .artist-text p {
+    font-size: 0.95rem;
+  }
+
+  .show {
+    gap: 24px;
+  }
+
+  .card {
+    padding: 30px;
   }
 }
 
   </style>
+
 </head>
 
 <body>
 
   <header class="nav">
     <div class="logo">LATENTE</div>
-    <nav>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      ☰
+    </button>
+
+    <nav class="nav-menu">
       <a href="#proyecto">Proyecto</a>
       <a href="#musica">Música</a>
       <a href="#galeria">Galería</a>
@@ -334,11 +423,11 @@ footer {
       </div>
 
       <div class="artist-text">
-        <h2>Moni Esparza</h2>
-        <span>Percusión · Coros · Producción</span>
+        <h2>Mónica Esparza</h2>
+        <span>Percusión · Producción</span>
 
         <p>
-          Tecnóloga en Música con énfasis en batería del Tecnológico de Artes Débora Arango
+          Baterista y compositora. Tecnóloga en Música con énfasis en batería del Tecnológico de Artes Débora Arango
           e Ingeniera de Sistemas e Informática de la Universidad Nacional de Colombia.
         </p><br>
 
@@ -360,8 +449,12 @@ footer {
     <h2>Música</h2>
     <p>Una propuesta sonora que transita entre lo íntimo y lo poderoso.</p>
     <br/>
-    <!-- Aquí puedes incrustar YouTube o Spotify -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/-2MymWiAzOo?si=Jk3219wV4FzeTsNB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/-2MymWiAzOo"
+        title="YouTube video player"
+        allowfullscreen>
+      </iframe>
+    </div>
   </section>
 
   <!-- SHOW -->
@@ -396,6 +489,15 @@ footer {
   <footer>
     © LATENTE · Mónica & Kelly
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.nav-menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+</script>
 
 </body>
 </html>
