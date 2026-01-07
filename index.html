@@ -7,6 +7,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
@@ -245,6 +246,25 @@ footer {
   cursor: pointer;
 }
 
+.artist-social {
+  display: flex;
+  gap: 16px;
+  margin: 12px 0 18px;
+}
+
+.artist-social a {
+  color: #ffffff;
+  font-size: 22px;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: #e5c07b; 
+}
+
+.artist-social a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   section {
@@ -401,6 +421,16 @@ footer {
         <h2>Kelly Esparza</h2>
         <span>Voz & Piano</span>
 
+        <div class="artist-social">
+          <a href="https://www.instagram.com/kellyesparzac" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="https://www.youtube.com/@KellyEsparzaVEVO" target="_blank" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+
         <p>
           Cantante, pianista y compositora. Tecnóloga en Música con énfasis en canto
           del Tecnológico de Artes Débora Arango y estudiante de Canto Popular en la
@@ -425,6 +455,16 @@ footer {
       <div class="artist-text">
         <h2>Mónica Esparza</h2>
         <span>Percusión · Producción</span>
+
+        <div class="artist-social">
+          <a href="https://www.instagram.com/moniesparza.drummer" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="https://www.youtube.com/@moniesparza.drummer" target="_blank" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
 
         <p>
           Baterista y compositora. Tecnóloga en Música con énfasis en batería del Tecnológico de Artes Débora Arango
