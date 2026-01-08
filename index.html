@@ -155,7 +155,12 @@ p {
 
 /* PROJECT */
 .project-section {
-  background: #111;
+  background: linear-gradient(
+    180deg,
+    #0f0f0f 0%,
+    #111111 60%,
+    #0b0b0b 100%
+  );
   color: #f6f3ee;
 }
 
@@ -197,6 +202,13 @@ p {
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  filter: grayscale(20%);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.artist-photo img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.03);
 }
 
 .artist-text span {
@@ -246,9 +258,11 @@ footer {
 .video-wrapper {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 560px;
+  max-height: 315px;
   padding-top: 56.25%; /* 16:9 */
   margin-top: 40px;
+  display: inline-flex;
 }
 
 .video-wrapper iframe {
@@ -285,6 +299,23 @@ footer {
 .artist-social a:hover {
   opacity: 1;
   transform: translateY(-2px);
+}
+
+.section-light {
+  background: var(--bg);
+}
+
+.section-white {
+  background: #ffffff;
+}
+
+.section-dark {
+  background: #111;
+  color: #f6f3ee;
+}
+
+.section-dark p {
+  color: #d8d6cf;
 }
 
 /* RESPONSIVE */
@@ -375,8 +406,7 @@ footer {
     <nav class="nav-menu">
       <a href="#presentacion">Presentación</a>
       <a href="#lasArtistas">Las artistas</a>
-      <a href="#videos">Videos</a>
-      <a href="#galeria">Galería</a>      
+      <a href="#videos">Videos</a>    
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
@@ -384,9 +414,9 @@ footer {
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <span>Dúo Musical · Medellín</span>
+      <span>Dúo Musical</span>
       <h1>LATENTE</h1>
-      <p>Música con luz y propósito. La precisión de la ingeniería y la sensibilidad del alma latina se encuentran en un escenario.</p>
+      <p>Música con luz y propósito. Ritmo y melodía entrelazados en una propuesta artística honesta y contemporánea.</p>
       <div class="hero-btns">
         <a href="#contacto" class="btn-main">Contrataciones</a>
         <a href="#" class="btn-outline">Descargar Dossier</a>
@@ -466,7 +496,9 @@ footer {
         </p>
       </div>
     </div>
+  </section> 
 
+  <section class="artists-section section-dark">
     <!-- Moni -->
     <div class="artist-row reverse">
       <div class="artist-photo">
@@ -503,36 +535,37 @@ footer {
 
   </div>
 </section>
-
-
   
-<section id="musica">
-    <h2>Música</h2>
-    <p>Una propuesta sonora que transita entre lo íntimo y lo poderoso.</p>
-    <br/>
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/-2MymWiAzOo"
-        title="YouTube video player"
-        allowfullscreen>
-      </iframe>
+<section id="videos" class="section-white">
+  <h2>Videos</h2>
+  <p>Una propuesta sonora que transita entre lo íntimo y lo poderoso.</p>
+  <br/>
+  <div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-2MymWiAzOo?si=7gepTrTXadM_OqhT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TpwQNoQZXsY?si=7_TUIqPg1EJHdn_b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KPMGmd-Ei58?si=lsCEcwsZfLNY8xY5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
+  
+<section>
+  <h2>Show en vivo</h2>
+  <div class="show">
+    <div class="card">
+      <h3>Formato dúo</h3>
+      <p>Voz, piano, percusión y batería.
+      Un show íntimo y poderoso, adaptable a teatros, festivales y espacios culturales.</p>
     </div>
-  </section>
-
-  <section>
-    <h2>Show en vivo</h2>
-    <div class="show">
-      <div class="card">
-        <h3>Formato dúo</h3>
-        <p>Voz, piano, percusión y batería.
-        Un show íntimo y poderoso, adaptable a teatros, festivales y espacios culturales.</p>
-      </div>
-      <div class="card">
-        <h3>Duración</h3>
-        <p>60 – 75 minutos.  
-        Repertorio original + versiones reinterpretadas.</p>
-      </div>
+    <div class="card">
+      <h3>Duración</h3>
+      <p>60 – 75 minutos.  
+      Repertorio original + versiones reinterpretadas.</p>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- IMAGEN -->
   <section class="image-full">
@@ -555,6 +588,10 @@ footer {
     const menu = document.querySelector('.nav-menu');
 
     toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    menu.addEventListener('click', () => {
       menu.classList.toggle('active');
     });
 </script>
