@@ -323,6 +323,39 @@ footer {
   margin-top: 50px;
 }
 
+.living-portrait {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-secondary); /* Color arena de fondo mientras carga */
+  line-height: 0; /* Quita espacios extra */
+}
+
+.living-portrait video {
+  width: 100%;
+  max-width: 420px;
+  object-fit: cover;
+  display: block;
+  /* El secreto: un filtro suave para unificar con la paleta tierra */
+  filter: sepia(0.2) contrast(1.05) brightness(0.95);
+  transition: filter 0.5s ease;
+}
+
+.living-portrait:hover video {
+  filter: sepia(0) contrast(1) brightness(1); /* Se aclara al pasar el mouse */
+}
+
+/* El borde decorativo que hablamos antes */
+.living-portrait::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: -15px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--details); /* El color ocre/dorado */
+  z-index: -1;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   section {
@@ -465,12 +498,13 @@ footer {
 <section id="lasArtistas" class="artists-section">
   <div class="artists-container">
 
-    <h2 class="section-title">LAS ARTISTAS</h2>
+   <!--<h2 class="section-title">INTEGRANTES</h2>-->
 
-    <!-- Kelly -->
     <div class="artist-row">
-      <div class="artist-photo">
-        <img src="images/KellyEsparza.jpg" alt="Kelly Esparza">
+      <div class="artist-photo living-portrait">
+        <video autoplay muted loop playsinline poster="images/kelly-static.jpg">
+          <source src="images/portadaTaty720.mp4" type="video/mp4">
+        </video>
       </div>
 
       <div class="artist-text">
@@ -506,8 +540,11 @@ footer {
   <section class="artists-section section-dark">
     <!-- Moni -->
     <div class="artist-row reverse">
-      <div class="artist-photo">
-        <img src="images/MoniEsparza.png" alt="Moni Esparza">
+      
+      <div class="artist-photo living-portrait">
+        <video autoplay muted loop playsinline poster="images/kelly-static.jpg">
+          <source src="images/portadaMoni720.mp4" type="video/mp4">
+        </video>
       </div>
 
       <div class="artist-text">
