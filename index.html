@@ -356,6 +356,86 @@ footer {
   z-index: -1;
 }
 
+.branding-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--accent); /* Tu color terracota/oro */
+    border-top: 1px solid rgba(176, 106, 74, 0.2);
+    padding-top: 20px;
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+
+  .section-formats {
+    background-color: var(--bg-secondary); /* Arena Suave */
+    padding: 100px 10%;
+    text-align: center;
+  }
+
+  .formats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  .format-card {
+    background: var(--bg-primary);
+    padding: 50px 40px;
+    text-align: left;
+    border: 1px solid rgba(74, 44, 42, 0.1);
+    transition: var(--transition);
+  }
+
+  .format-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  }
+
+  .format-card.featured {
+    border-top: 5px solid var(--accent); /* Terracota */
+  }
+
+  .format-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .format-number {
+    font-family: monospace;
+    color: var(--details);
+    font-size: 0.9rem;
+  }
+
+  .format-card h3 {
+    color: var(--text-main);
+    font-size: 1.8rem;
+  }
+
+  .format-desc {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    color: var(--soft);
+  }
+
+  .format-list {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text-main);
+  }
+
+  .format-list li {
+    margin-bottom: 10px;
+  }
+
+  .format-list i {
+    color: var(--accent);
+    margin-right: 10px;
+    font-size: 0.7rem;
+  }
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   section {
@@ -443,8 +523,9 @@ footer {
 
     <nav class="nav-menu">
       <a href="#presentacion">Presentación</a>
-      <a href="#lasArtistas">Las artistas</a>
+      <a href="#lasArtistas">Integrantes</a>
       <a href="#videos">Videos</a>    
+      <a href="#formatos">Formatos</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
@@ -454,7 +535,7 @@ footer {
     <div class="hero-content">
       <span>Dúo Musical</span>
       <h1>LATENTE</h1>
-      <p>Música con luz y propósito. Ritmo y melodía entrelazados en una propuesta artística honesta y contemporánea.</p>
+      <p>Música con identidad y propósito. <br> Ritmo y melodía entrelazados en una propuesta artística honesta y contemporánea.</p>
       <div class="hero-btns">
         <a href="#contacto" class="btn-main">Contrataciones</a>
         <a href="#" class="btn-outline">Descargar Dossier</a>
@@ -470,24 +551,23 @@ footer {
 
     <div class="project-text">
       <p>
-        Nacidas entre melodías y sueños compartidos, <strong>Kelly y Mónica Esparza</strong>
-        son dos hermanas que descubrieron en la música el lenguaje perfecto para expresar
-        su esencia. Su vínculo trasciende la sangre: es la unión de dos almas consagradas al
-        arte de transformar la vida en sonido, donde cada nota refleja una historia, una
-        emoción y una búsqueda interior.
+        Nacidas entre melodías y sueños compartidos, Kelly y Mónica Esparza son dos hermanas que descubrieron en 
+        la música el lenguaje definitivo para expresar su esencia. Su vínculo trasciende la sangre: es la convergencia 
+        de dos visiones consagradas al arte de transformar la vida en sonido, donde cada nota es el reflejo de una 
+        historia, una emoción y una búsqueda interior constante.
       </p><br>
 
       <p>
-        Su propuesta sonora es un viaje sin fronteras, un recorrido por diversos paisajes
-        musicales en el que cada canción se convierte en la exploración de un nuevo mundo.
-        En su música confluyen lo ancestral y lo contemporáneo, la raíz y la innovación,
-        nuestra cultura y la magia de lo desconocido.
+        La propuesta sonora de LATENTE es un viaje sin fronteras; un recorrido por paisajes musicales donde 
+        cada canción invita a la exploración de un nuevo mundo. En su propuesta confluyen lo ancestral y lo 
+        contemporáneo, la raíz cultural y la innovación técnica, creando un diálogo entre nuestra identidad y 
+        la magia de lo desconocido.
       </p><br>
 
       <p>
-        Con un mensaje honesto y poderoso, abordan temas como el amor, el empoderamiento,
-        la superación y la conciencia social, invitando al público a vivir la música como una
-        experiencia transformadora.
+        Con un mensaje honesto y poderoso, el dúo aborda temas como el amor, el empoderamiento y la conciencia social. 
+        Más que un concierto, LATENTE invita al público a habitar una experiencia transformadora, donde la música 
+        se convierte en el puente hacia una conexión genuina y universal.
       </p>
     </div>
 
@@ -522,17 +602,27 @@ footer {
         </div>
 
         <p>
-          Cantante, pianista y compositora. Tecnóloga en Música con énfasis en canto
-          del Tecnológico de Artes Débora Arango y estudiante de Canto Popular en la
-          Universidad de Antioquia.
+          <strong>Cantautora, pianista y productora.</strong> Tecnóloga en Música con énfasis en Canto (Tecnológico de Artes Débora Arango) 
+          y estudiante de Canto Popular (Universidad de Antioquia). Con más de 12 años de trayectoria, Kelly es la voz conductora 
+          y la esencia melódica detrás de LATENTE.
         </p><br>
 
         <p>
-          Con más de <strong>13 años de trayectoria artística</strong>, ha desarrollado un
-          estilo sensible y versátil, influenciado por el pop, la balada y la música del mundo.
-          Su interpretación se caracteriza por la emoción, la técnica vocal y la conexión
-          genuina con el público.
+            Su propuesta utiliza el <strong>piano como eje creativo</strong>, proyectando una voz que transita con naturalidad 
+            entre el pop, la balada y el folk. Integra los sonidos del mundo con una interpretación honesta, logrando un equilibrio 
+            entre la técnica académica y una conexión genuina con la fibra emocional del público.
+        </p><br>
+
+        <p>
+            Como compositora, aporta la <strong>dimensión poética</strong> al dúo: diseña atmósferas íntimas y poderosas donde 
+            la palabra y la melodía dialogan con propósito, transformando cada presentación en un viaje sensorial que invita a 
+            la reflexión y al empoderamiento social.
+        </p><br>
+
+        <p class="branding-quote">
+            En LATENTE, Kelly no solo interpreta la música: <em>da voz a las historias que nos hacen latir.</em>
         </p>
+    
       </div>
     </div>
   </section> 
@@ -562,15 +652,25 @@ footer {
         </div>
 
         <p>
-          Baterista y compositora. Tecnóloga en Música con énfasis en batería del Tecnológico de Artes Débora Arango
-          e Ingeniera de Sistemas e Informática de la Universidad Nacional de Colombia.
+            <strong>Baterista, compositora y productora.</strong> Tecnóloga en Música con énfasis en batería (Tecnológico de Artes Débora Arango) 
+            e Ingeniera de Sistemas e Informática (Universidad Nacional de Colombia). Mónica es el motor rítmico y el cerebro detrás de la 
+            infraestructura técnica de LATENTE.
         </p><br>
 
         <p>
-          Su enfoque une la precisión rítmica con la exploración sonora. Amante de los ritmos
-          latinos —cumbia, salsa y merengue—, combina la percusión tradicional con la
-          producción musical contemporánea. También se encarga de la grabación, edición
-          audiovisual y el componente técnico del proyecto.
+            Su propuesta nace de la batería como núcleo de fuerza, expandiendo su lenguaje hacia la riqueza tímbrica de los <strong>timbales, 
+              congas y bongós</strong>. Esta integración le permite reinterpretar géneros como la cumbia y la salsa desde una mirada 
+              contemporánea, donde la tradición dialoga con nuevas formas de entender el ritmo.
+        </p><br>
+
+        <p>
+            Desde su formación en ingeniería, aporta una dimensión diferencial al dúo: lidera el <strong>diseño sonoro, la grabación y 
+              la narrativa audiovisual</strong> del proyecto. Su enfoque garantiza no solo un show técnicamente impecable, sino una 
+              experiencia estética coherente.
+        </p><br>
+
+        <p class="branding-quote">
+            En LATENTE, Mónica no solo marca el tiempo: <em>diseña el universo donde la música sucede.</em>
         </p>
       </div>
     </div>
@@ -598,19 +698,47 @@ footer {
   </div>
 </section>
   
-<section>
-  <h2>Show en vivo</h2>
-  <div class="show">
-    <div class="card">
-      <h3>Formato dúo</h3>
-      <p>Voz, piano, percusión y batería.
-      Un show íntimo y poderoso, adaptable a teatros, festivales y espacios culturales.</p>
+<section id="formatos" class="section-formats">
+  <h2 class="section-title">Propuesta Escénica</h2>
+  
+  <div class="formats-grid">
+    
+    <div class="format-card">
+      <div class="format-header">
+        <span class="format-number">01</span>
+        <h3>Dúo Esencia</h3>
+      </div>
+      <p class="format-desc">Voz, piano y percusión híbrida. Una experiencia íntima y técnicamente sofisticada, ideal para teatros y espacios culturales.</p>
+      <ul class="format-list">
+        <li><i class="fa-solid fa-check"></i> Diseño sonoro inmersivo</li>
+        <li><i class="fa-solid fa-check"></i> Conexión directa con el público</li>
+      </ul>
     </div>
-    <div class="card">
-      <h3>Duración</h3>
-      <p>60 – 75 minutos.  
-      Repertorio original + versiones reinterpretadas.</p>
+
+    <div class="format-card featured">
+      <div class="format-header">
+        <span class="format-number">02</span>
+        <h3>Full Band</h3>
+      </div>
+      <p class="format-desc">Dúo base + Músicos invitados (4 a 5 integrantes). Una propuesta expansiva diseñada para festivales y escenarios de gran formato.</p>
+      <ul class="format-list">
+        <li><i class="fa-solid fa-check"></i> Sonido de alto impacto bailable</li>
+        <li><i class="fa-solid fa-check"></i> Puesta en escena dinámica</li>
+      </ul>
     </div>
+
+    <div class="format-card technical">
+      <div class="format-header">
+        <span class="format-number"><i class="fa-solid fa-sliders"></i></span>
+        <h3>Especificaciones</h3>
+      </div>
+      <ul class="tech-info-list">
+        <li><strong>Duración:</strong> 60 – 75 minutos.</li>
+        <li><strong>Repertorio:</strong> Original + Versiones Latente.</li>
+        <li><strong>Requerimientos:</strong> Rider técnico disponible.</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
